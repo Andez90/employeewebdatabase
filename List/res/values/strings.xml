@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">List</string>
+    <string name="title_item_detail">Item Detail</string>
+    
+    <string name="name">Name</string>
+    <string name="amount">Amount</string>
+    <string name="comment">Comment</string>
+    <string name="checkdone">Done</string>
+    
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="additem">addItem</string>
+    <string name="send">Send</string>
+    <string name="delete">Delete</string>
+
+</resources>

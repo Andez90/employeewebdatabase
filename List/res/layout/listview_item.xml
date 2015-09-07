@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relativeLayoutTaskItem"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <CheckBox
+        android:id="@+id/completedCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="5dp"
+        android:focusable="false"
+        android:button="@drawable/btn_check" />
+
+    <TextView
+        android:id="@+id/nameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/completedCheckBox"
+        android:layout_alignBottom="@+id/completedCheckBox"
+        android:layout_toEndOf="@+id/completedCheckBox"
+        android:layout_toRightOf="@+id/completedCheckBox"
+        android:text="@string/name"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/amountTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/completedCheckBox"
+        android:layout_alignBottom="@+id/completedCheckBox"
+        android:layout_toEndOf="@+id/nameTextView"
+        android:layout_toRightOf="@+id/nameTextView"
+        android:paddingStart="7dp"
+        android:paddingLeft="7dp"
+        android:paddingEnd="7dp"
+        android:text="@string/amount"
+        android:textColor="@android:color/black" />
+    
+    <TextView
+        android:id="@+id/commentTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nameTextView"
+        android:layout_marginTop="-5dp"
+        android:layout_toEndOf="@+id/completedCheckBox"
+        android:layout_toRightOf="@+id/completedCheckBox"
+        android:paddingBottom="7dp"
+        android:text="@string/comment" 
+        android:textColor="@android:color/black"/>
+
+</RelativeLayout>
