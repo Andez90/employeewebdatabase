@@ -1,0 +1,9 @@
+package uppgift.a;
+
+import java.io.IOException;
+
+public class Main {
+	public static void main (String [] args) throws IOException{
+		TreeComunicator tc = new TreeComunicator();
+	}
+}
