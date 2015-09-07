@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html 
+xmlns="http://www.w3.org/1999/xhtml" 
+xmlns:ui="http://java.sun.com/jsf/facelets" 
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:f="http://java.sun.com/jsf/core">
+
+	<head></head> 
+	
+	<body>
+		<f:metadata>
+			<f:viewParam name="id" value="#{edit.id}" />
+			<f:viewAction action="#{edit.init}" />
+		</f:metadata>
+		
+		<h:form>
+			<h:panelGrid columns="2">
+				Förnamn:
+				<h:inputText value="#{edit.employee.firstname}" ></h:inputText>
+				Efternamn:
+				<h:inputText value="#{edit.employee.lastname}"></h:inputText>
+				Lön:
+				<h:inputText value="#{edit.employee.salary}">
+				<f:validateDoubleRange minimum="0"></f:validateDoubleRange>
+				</h:inputText>
+			</h:panelGrid>
+			<h:commandButton value="Uppdatera" action="#{edit.update}"></h:commandButton>
+		</h:form>
+	</body>
+</html>

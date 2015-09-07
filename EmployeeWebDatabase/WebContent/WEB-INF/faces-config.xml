@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config
+    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+    version="2.2">
+
+    <managed-bean>
+		<managed-bean-name>create</managed-bean-name>
+		<managed-bean-class>com.example.web.viewbeans.Create</managed-bean-class>
+		<managed-bean-scope>view</managed-bean-scope>
+    </managed-bean>
+     
+    <managed-bean>
+		<managed-bean-name>edit</managed-bean-name>
+		<managed-bean-class>com.example.web.viewbeans.Edit</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+		     
+    <managed-bean>
+		<managed-bean-name>index</managed-bean-name>
+		<managed-bean-class>com.example.web.viewbeans.Index</managed-bean-class>
+		<managed-bean-scope>view</managed-bean-scope>
+    </managed-bean>
+     
+    <navigation-rule>
+    	<from-view-id>/index.xhtml</from-view-id>
+	    <navigation-case>
+	        <from-action>#{index.create}</from-action>
+	        <from-outcome>OK</from-outcome>
+	        <to-view-id>/create.xhtml</to-view-id>
+	        <redirect/>
+	    </navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+    	<from-view-id>/create.xhtml</from-view-id>
+	    <navigation-case>
+	        <from-action>#{create.create}</from-action>
+	        <from-outcome>OK</from-outcome>
+	        <to-view-id>/index.xhtml</to-view-id>
+	        <redirect/>
+	    </navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+    	<from-view-id>/edit.xhtml</from-view-id>
+	    <navigation-case>
+	        <from-action>#{edit.update}</from-action>
+	        <from-outcome>OK</from-outcome>
+	        <to-view-id>/index.xhtml</to-view-id>
+	        <redirect/>
+	    </navigation-case>
+	</navigation-rule>
+</faces-config>

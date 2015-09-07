@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html 
+xmlns="http://www.w3.org/1999/xhtml" 
+xmlns:ui="http://java.sun.com/jsf/facelets" 
+xmlns:h="http://java.sun.com/jsf/html" 
+xmlns:f="http://java.sun.com/jsf/core">
+	
+	<head></head> 
+	
+	<body>
+		<f:event type="preRenderView" listener="#{index.pageInit}" />
+		<h:form>
+			<h:commandButton value="Skapa" action="#{index.create}"></h:commandButton>
+			<h:dataTable var="employee" value="#{index.employees}">
+				<h:column>
+					<f:facet name="header"> <h:outputText value="Id" />
+					</f:facet>
+					<h:outputText value="#{employee.id}" />
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">
+					<h:outputText value="Name" /> </f:facet>
+					<h:outputText value="#{employee.name}" />
+				</h:column>
+				
+				<h:column>
+					<h:link outcome="edit" value="Redigera">
+					<f:param name="id" value="#{employee.id}"></f:param> </h:link>
+					</h:column> <h:column>
+					<h:commandLink value="Radera" action="#{index.delete(employee)}"></h:commandLink>
+				</h:column>
+			</h:dataTable>
+		</h:form>
+	</body>
+</html>
